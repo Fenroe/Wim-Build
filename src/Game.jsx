@@ -1,17 +1,23 @@
+import { useState } from 'react';
+import Header from './Components/Header';
+import PuzzleSelection from './Components/PuzzleSelection';
+import Puzzle from './Components/Puzzle';
+
 function Game() {
+  const [gameIsActive, setGameIsActive] = useState(false);
+
+  function startGame() {
+    setGameIsActive(true);
+  }
+
+  function endGame() {
+    setGameIsActive(false);
+  }
+
   return (
     <div className="game">
-      <header>
-        <h1>Wimby</h1>
-      </header>
-      <main>
-        <p>
-          Choose a puzzle from our selection. You will have thirty minutes to find
-          all five characters
-          {' '}
-        </p>
-        <button type="button">Start</button>
-      </main>
+      <Header endGame={endGame} />
+      {gameIsActive ? <Puzzle /> : <PuzzleSelection startGame={startGame} />}
     </div>
   );
 }
