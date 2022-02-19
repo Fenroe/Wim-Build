@@ -1,6 +1,4 @@
 function Puzzle({ selectedPuzzle }) {
-  console.log(selectedPuzzle);
-
   return (
     <img
       className="puzzle-space"
