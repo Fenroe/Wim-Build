@@ -23,8 +23,7 @@ function PuzzleSelection({ startGame, choosePuzzle }) {
   return (
     <section>
       <p>
-        Choose a puzzle from our selection. You will have thirty minutes to find
-        all five characters
+        Choose a puzzle from our selection. You will have ten minutes to find three characters
         {' '}
       </p>
       <fieldset>
