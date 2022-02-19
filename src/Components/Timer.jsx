@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-function Timer({ endGame }) {
+function Timer({ timeRanOut }) {
   const [time, setTime] = useState({
-    minutes: 10,
+    minutes: 1,
     seconds: 0,
   });
 
@@ -15,7 +15,7 @@ function Timer({ endGame }) {
             seconds: 59,
           });
         } else {
-          endGame();
+          timeRanOut();
         }
       } else {
         setTime({
