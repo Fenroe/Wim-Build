@@ -1,9 +1,12 @@
-function Puzzle() {
+function Puzzle({ selectedPuzzle }) {
+  console.log(selectedPuzzle);
+
   return (
-    <section>
-      <div>Timer</div>
-      <div>Characters</div>
-    </section>
+    <img
+      className="puzzle-space"
+      src={`${process.env.PUBLIC_URL}/Images/${selectedPuzzle}.jpg`}
+      alt={selectedPuzzle}
+    />
   );
 }
 

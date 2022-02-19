@@ -14,10 +14,31 @@ function Game() {
     setGameIsActive(false);
   }
 
+  const [selectedPuzzle, setSelectedPuzzle] = useState('');
+
+  function updateSelectedPuzzle(choice) {
+    setSelectedPuzzle(choice);
+  }
+
+  function resetSelectedPuzzle() {
+    setSelectedPuzzle('');
+  }
+
   return (
     <div className="game">
-      <Header endGame={endGame} />
-      {gameIsActive ? <Puzzle /> : <PuzzleSelection startGame={startGame} />}
+      <Header endGame={endGame} resetSelectedPuzzle={resetSelectedPuzzle} />
+      {gameIsActive ? (
+        <Puzzle
+          endGame={endGame}
+          selectedPuzzle={selectedPuzzle}
+        />
+      )
+        : (
+          <PuzzleSelection
+            choosePuzzle={updateSelectedPuzzle}
+            startGame={startGame}
+          />
+        )}
     </div>
   );
 }
