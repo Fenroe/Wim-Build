@@ -1,11 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
-function Timer({ timeRanOut }) {
-  const [time, setTime] = useState({
-    minutes: 1,
-    seconds: 0,
-  });
-
+function Timer({ time, setTime, timeRanOut }) {
   function startCountdown() {
     const countdown = setInterval(() => {
       if (time.seconds === 0) {

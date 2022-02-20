@@ -17,6 +17,11 @@ function Game() {
 
   const [selectedPuzzle, setSelectedPuzzle] = useState('');
 
+  const [time, setTime] = useState({
+    minutes: 10,
+    seconds: 0,
+  });
+
   function startGame() {
     setGameIsActive(true);
   }
@@ -49,17 +54,28 @@ function Game() {
     setSelectedPuzzle('');
   }
 
+  function restoreGameDefaults() {
+    resetSelectedPuzzle();
+    endGame();
+    setGameFinished({
+      finished: false,
+      inTime: false,
+    });
+  }
+
   function renderCorrectComponents() {
     if (gameFinished.finished) {
       if (gameFinished.inTime) {
-        return <SubmitTime />;
+        return <SubmitTime reset={restoreGameDefaults} />;
       } else {
-        return <GameOver />;
+        return <GameOver reset={restoreGameDefaults} />;
       }
     } else {
       if (gameIsActive) {
         return (
           <Puzzle
+            time={time}
+            setTime={setTime}
             finishedInTime={gameFinishedInTime}
             timeRanOut={gameTimeRanOut}
             selectedPuzzle={selectedPuzzle}
