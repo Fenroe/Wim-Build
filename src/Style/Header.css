@@ -1,4 +1,7 @@
 .header {
   color: #E3E8F8;
   font-family: 'Courier New', Courier, monospace;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
 }

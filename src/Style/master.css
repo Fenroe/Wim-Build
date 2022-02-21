@@ -1,5 +1,7 @@
 @import url('reset.css');
+@import url('global.css');
 @import url('Header.css');
 @import url('Game.css');
 @import url('Puzzle.css');
+@import url('Timer.css');
 @import url('PuzzleSelection.css');

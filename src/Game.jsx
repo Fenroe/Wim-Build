@@ -61,6 +61,10 @@ function Game() {
       finished: false,
       inTime: false,
     });
+    setTime({
+      minutes: 10,
+      seconds: 0,
+    });
   }
 
   function renderCorrectComponents() {

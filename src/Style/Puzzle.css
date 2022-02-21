@@ -1,3 +1,7 @@
+.puzzle-space-container {
+  position: relative;
+}
+
 .puzzle-space {
   width: 100vw;
 }

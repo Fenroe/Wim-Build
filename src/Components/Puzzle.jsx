@@ -1,18 +1,26 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import Timer from './Timer';
+import Characters from './Characters';
 
 function Puzzle({
   time, setTime, finishedInTime, timeRanOut, selectedPuzzle,
 }) {
   function findLocation(event) {
-    console.log(event.clientX);
-    console.log(event.clientY);
+    let x = event.target.getBoundingClientRect().left;
+    let y = event.target.getBoundingClientRect().top;
+    x = event.clientX - x;
+    y = event.clientY - y;
+    console.log(x);
+    console.log(y);
   }
 
   return (
-    <div>
-      <Timer time={time} setTime={setTime} timeRanOut={timeRanOut} />
+    <div className="puzzle-space-container">
+      <div className="puzzle-helper-container">
+        <Timer time={time} setTime={setTime} timeRanOut={timeRanOut} />
+        <Characters selectedPuzzle={selectedPuzzle} />
+      </div>
       <img
         onClick={(e) => findLocation(e)}
         className="puzzle-space"

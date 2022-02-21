@@ -27,19 +27,19 @@ function PuzzleSelection({ startGame, choosePuzzle }) {
         {' '}
       </h2>
       <fieldset className="puzzle-selection-fieldset">
-        <label className="label-1" htmlFor="Pokemon Blue">Pokemon Blue</label>
+        <label className="label-1" htmlFor="XBOX 360">XBOX 360</label>
         <input
           className="input-1"
-          id="Pokemon Blue"
-          name="Pokemon Blue"
+          id="XBOX 360"
+          name="XBOX 360"
           type="checkbox"
           onClick={(e) => checkIfInputSelected(e.target)}
         />
-        <label className="label-2" htmlFor="PSX">PSX</label>
+        <label className="label-2" htmlFor="PS2">PS2</label>
         <input
           className="input-2"
-          id="PSX"
-          name="PSX"
+          id="PS2"
+          name="PS2"
           type="checkbox"
           onClick={(e) => checkIfInputSelected(e.target)}
         />

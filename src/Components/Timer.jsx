@@ -27,7 +27,7 @@ function Timer({ time, setTime, timeRanOut }) {
   });
 
   return (
-    <div>
+    <div className="puzzle-timer">
       <h1>
         Time Remaining:
         {' '}
