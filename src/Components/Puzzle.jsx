@@ -34,8 +34,8 @@ function Puzzle({
   return (
     <div className="puzzle-space-container">
       <div className="puzzle-helper-container">
-        <Timer time={time} setTime={setTime} timeRanOut={timeRanOut} />
-        <Characters characters={characters} />
+        <Timer className="puzzle-timer" time={time} setTime={setTime} timeRanOut={timeRanOut} />
+        <Characters className="puzzle-character-tracker" characters={characters} />
       </div>
       <img
         onClick={(e) => findLocation(e)}
