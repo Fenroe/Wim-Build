@@ -127,7 +127,7 @@ function Game() {
   function renderCorrectComponents() {
     if (gameFinished.finished) {
       if (gameFinished.inTime) {
-        return <SubmitTime reset={restoreGameDefaults} />;
+        return <SubmitTime reset={restoreGameDefaults} time={time} />;
       } else {
         return <GameOver reset={restoreGameDefaults} />;
       }
