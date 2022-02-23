@@ -3,7 +3,7 @@ function SubmitTime({ reset }) {
     <div>
       <h1>Enter your name and submit your time to the leaderboard!</h1>
       <input type="text" />
-      <button type="button" onClick={reset}>Submit</button>
+      <button className="button" type="button" onClick={reset}>Submit</button>
     </div>
   );
 }

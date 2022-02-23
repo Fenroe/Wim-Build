@@ -1,34 +1,18 @@
-/* eslint-disable consistent-return */
-import characterData from '../Data/characterData';
-
-function Characters({ selectedPuzzle }) {
-  function generateCharacterList() {
-    // eslint-disable-next-line array-callback-return
-    const newCharacterList = characterData.filter((entry) => {
-      if (entry.map === selectedPuzzle) {
-        return entry;
-      }
-    });
-    return newCharacterList;
-  }
-
+function Characters({ characters }) {
   function renderCharacterData() {
-    const characterArray = generateCharacterList();
-    const relevantCharacterArray = characterArray.map((character) => (
-      <li key={characterArray.indexOf(character)}>
-        <span>{character.name}</span>
-        <span>{character.media}</span>
+    const relevantCharacterArray = characters.map((character) => (
+      <li style={{ display: character.found === true ? 'none' : null }} className="character-details-container" key={characters.indexOf(character)}>
+        <span className="character-name">{character.name}</span>
+        <span className="character-media">{character.media}</span>
       </li>
     ));
     return relevantCharacterArray;
   }
 
   return (
-    <div>
-      <ul>
-        {renderCharacterData()}
-      </ul>
-    </div>
+    <ul className="characters-container">
+      {renderCharacterData()}
+    </ul>
   );
 }
 

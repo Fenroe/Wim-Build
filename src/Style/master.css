@@ -4,4 +4,6 @@
 @import url('Game.css');
 @import url('Puzzle.css');
 @import url('Timer.css');
+@import url('Characters.css');
+@import url('FindCharacterMenu.css'); 
 @import url('PuzzleSelection.css');

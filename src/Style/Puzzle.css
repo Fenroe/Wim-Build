@@ -2,6 +2,14 @@
   position: relative;
 }
 
+.puzzle-helper-container {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  width: 100%;
+}
+
 .puzzle-space {
   width: 100vw;
 }

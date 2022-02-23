@@ -1,0 +1,22 @@
+.find-character-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: .1rem;
+}
+
+.find-character-menu-item {
+  border: 1px solid #E3E8F8;
+  color: #E3E8F8;
+  background-color: #3E588F;
+  padding: .5rem; 
+  font-size: .8rem;
+  cursor: pointer;
+}
+
+.find-character-menu-item:hover {
+  border: 1px solid #3E588F;
+  color: #3E588F;
+  background-color: #E3E8F8;
+}

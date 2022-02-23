@@ -1,6 +1,8 @@
+/* eslint-disable array-callback-return */
 /* eslint-disable no-lonely-if */
 /* eslint-disable no-else-return */
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import characterData from './Data/characterData';
 import Header from './Components/Header';
 import PuzzleSelection from './Components/PuzzleSelection';
 import Puzzle from './Components/Puzzle';
@@ -8,6 +10,7 @@ import SubmitTime from './Components/SubmitTime';
 import GameOver from './Components/GameOver';
 
 function Game() {
+  // states used by lower components are all defined here
   const [gameIsActive, setGameIsActive] = useState(false);
 
   const [gameFinished, setGameFinished] = useState({
@@ -22,6 +25,15 @@ function Game() {
     seconds: 0,
   });
 
+  const [characters, setCharacters] = useState([]);
+  // TODO x and y aren't needed and can be removed
+  const [coordinates, setCoordinates] = useState({
+    x: null,
+    y: null,
+    xRelative: null,
+    yRelative: null,
+  });
+  // helper functions that update state
   function startGame() {
     setGameIsActive(true);
   }
@@ -54,6 +66,49 @@ function Game() {
     setSelectedPuzzle('');
   }
 
+  function generateCharacterList(map) {
+    return characterData.filter((entry) => (entry.map === map ? entry : null));
+  }
+
+  function setCurrentCharacters(map) {
+    setCharacters(generateCharacterList(map));
+  }
+
+  function resetCoordinates() {
+    setCoordinates({
+      x: null,
+      y: null,
+      xRelative: null,
+      yRelative: null,
+    });
+  }
+
+  function checkIfCharacterFound(data) {
+    let xVerified = false;
+    let yVerified = false;
+    if (coordinates.xRelative >= data.xStart && coordinates.xRelative <= data.xEnd) {
+      xVerified = true;
+    }
+    if (coordinates.yRelative >= data.yStart && coordinates.yRelative <= data.yEnd) {
+      yVerified = true;
+    }
+    if (xVerified === true && yVerified === true) {
+      const updatedCharacters = characters.map((character) => {
+        if (character.name === data.name) {
+          character.found = true;
+        }
+        return character;
+      });
+      setCharacters(updatedCharacters);
+    }
+  }
+
+  function checkIfAllCharactersFound() {
+    if (characters.every((character) => character.found === true)) {
+      return true;
+    } return false;
+  }
+
   function restoreGameDefaults() {
     resetSelectedPuzzle();
     endGame();
@@ -65,8 +120,10 @@ function Game() {
       minutes: 10,
       seconds: 0,
     });
+    setCharacters([]);
+    resetCoordinates();
   }
-
+  // TODO find a way to make this function look cleaner
   function renderCorrectComponents() {
     if (gameFinished.finished) {
       if (gameFinished.inTime) {
@@ -83,24 +140,30 @@ function Game() {
             finishedInTime={gameFinishedInTime}
             timeRanOut={gameTimeRanOut}
             selectedPuzzle={selectedPuzzle}
+            characters={characters}
+            coordinates={coordinates}
+            setCoordinates={setCoordinates}
+            resetCoordinates={resetCoordinates}
+            checkIfCharacterFound={checkIfCharacterFound}
+            checkIfAllCharactersFound={checkIfAllCharactersFound}
           />
         );
       } else {
-        return <PuzzleSelection choosePuzzle={updateSelectedPuzzle} startGame={startGame} />;
+        return (
+          <PuzzleSelection
+            choosePuzzle={updateSelectedPuzzle}
+            startGame={startGame}
+            setCurrentCharacters={setCurrentCharacters}
+          />
+        );
       }
     }
   }
 
-  let gameComponents = renderCorrectComponents();
-
-  useEffect(() => {
-    gameComponents = renderCorrectComponents();
-  });
-
   return (
     <div className="game">
       <Header endGame={endGame} resetSelectedPuzzle={resetSelectedPuzzle} />
-      {gameComponents}
+      {renderCorrectComponents()}
     </div>
   );
 }

@@ -3,7 +3,7 @@ function GameOver({ reset }) {
     <div>
       <h1>You ran out of time, Try again!</h1>
 
-      <button type="button" onClick={reset}>Select A Puzzle</button>
+      <button className="button" type="button" onClick={reset}>Select A Puzzle</button>
     </div>
   );
 }

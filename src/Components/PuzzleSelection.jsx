@@ -1,4 +1,4 @@
-function PuzzleSelection({ startGame, choosePuzzle }) {
+function PuzzleSelection({ startGame, choosePuzzle, setCurrentCharacters }) {
   let inputSelected = false;
 
   let selectedPuzzle = '';
@@ -16,6 +16,7 @@ function PuzzleSelection({ startGame, choosePuzzle }) {
   function start() {
     if (inputSelected === true) {
       choosePuzzle(selectedPuzzle);
+      setCurrentCharacters(selectedPuzzle);
       startGame();
     }
   }

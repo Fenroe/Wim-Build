@@ -7,6 +7,7 @@ const characterData = [
     xEnd: 186,
     yStart: 1283,
     yEnd: 1329,
+    found: false,
   },
   {
     name: 'Frank West',
@@ -16,6 +17,7 @@ const characterData = [
     xEnd: 927,
     yStart: 1790,
     yEnd: 1838,
+    found: false,
   },
   {
     name: 'Isaac',
@@ -25,6 +27,7 @@ const characterData = [
     xEnd: 776,
     yStart: 1537,
     yEnd: 1600,
+    found: false,
   },
   {
     name: 'James Sunderland',
@@ -34,6 +37,7 @@ const characterData = [
     xEnd: 396,
     yStart: 1854,
     yEnd: 1922,
+    found: false,
   },
   {
     name: 'Jimmy Hopkins',
@@ -43,6 +47,7 @@ const characterData = [
     xEnd: 824,
     yStart: 1221,
     yEnd: 1292,
+    found: false,
   },
   {
     name: 'Amaterasu',
@@ -52,6 +57,7 @@ const characterData = [
     xEnd: 476,
     yStart: 1453,
     yEnd: 1531,
+    found: false,
   },
   {
     name: 'Ash Ketchum',
@@ -61,6 +67,7 @@ const characterData = [
     xEnd: 48,
     yStart: 1689,
     yEnd: 1711,
+    found: false,
   },
   {
     name: 'Patrick',
@@ -70,6 +77,7 @@ const characterData = [
     xEnd: 858,
     yStart: 1164,
     yEnd: 1195,
+    found: false,
   },
   {
     name: 'Tom',
@@ -79,6 +87,7 @@ const characterData = [
     xEnd: 1116,
     yStart: 2098,
     yEnd: 2131,
+    found: false,
   },
 ];
 
