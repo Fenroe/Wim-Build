@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+import { useEffect } from 'react';
 import Timer from './Timer';
 import Characters from './Characters';
 import FindCharacterMenu from './FindCharacterMenu';
@@ -7,6 +8,7 @@ import FindCharacterMenu from './FindCharacterMenu';
 function Puzzle({
   time, setTime, finishedInTime, timeRanOut, selectedPuzzle, characters, coordinates,
   setCoordinates, resetCoordinates, checkIfCharacterFound, checkIfAllCharactersFound,
+  setCharacters,
 }) {
   function findLocation(event) {
     const xClient = event.target.getBoundingClientRect().left;
@@ -20,6 +22,14 @@ function Puzzle({
       yRelative,
     });
   }
+
+  useEffect(() => {
+    const resetCharacters = characters.map((character) => {
+      character.found = false;
+      return character;
+    });
+    setCharacters(resetCharacters);
+  }, []);
 
   return (
     <div className="puzzle-space-container">

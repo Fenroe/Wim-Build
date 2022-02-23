@@ -146,14 +146,15 @@ function Game() {
             resetCoordinates={resetCoordinates}
             checkIfCharacterFound={checkIfCharacterFound}
             checkIfAllCharactersFound={checkIfAllCharactersFound}
+            setCharacters={setCharacters}
           />
         );
       } else {
         return (
           <PuzzleSelection
             choosePuzzle={updateSelectedPuzzle}
-            startGame={startGame}
             setCurrentCharacters={setCurrentCharacters}
+            startGame={startGame}
           />
         );
       }

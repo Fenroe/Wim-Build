@@ -1,4 +1,4 @@
-function PuzzleSelection({ startGame, choosePuzzle, setCurrentCharacters }) {
+function PuzzleSelection({ startGame, setCurrentCharacters, choosePuzzle }) {
   let inputSelected = false;
 
   let selectedPuzzle = '';
