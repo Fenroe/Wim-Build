@@ -162,7 +162,7 @@ function Game() {
   }
 
   return (
-    <div className="game">
+    <div className="page-container">
       <Header endGame={endGame} resetSelectedPuzzle={resetSelectedPuzzle} />
       {renderCorrectComponents()}
     </div>

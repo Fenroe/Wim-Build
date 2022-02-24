@@ -2,12 +2,16 @@
   position: relative;
 }
 
-.puzzle-helper-container {
+.puzzle-timer {
   position: fixed;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 2rem;
-  width: 100%;
+  right: 0;
+  margin: 0 2rem;
+}
+
+.puzzle-character-tracker {
+  position: fixed;
+  left: 0;
+  margin: 0 2rem;
 }
 
 .puzzle-space {

@@ -10,7 +10,7 @@ function Characters({ characters }) {
   }
 
   return (
-    <ul className="characters-container">
+    <ul className="puzzle-character-tracker">
       {renderCharacterData()}
     </ul>
   );

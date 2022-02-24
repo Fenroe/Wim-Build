@@ -1,5 +1,9 @@
-body {
+.page-container {
   background-color: #203562;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #E3E8F8;
+  width: 100vw;
+  min-height: 100vh;
 }
 
 .button {
