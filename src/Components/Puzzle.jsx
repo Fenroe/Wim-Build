@@ -11,8 +11,12 @@ function Puzzle({
   setCharacters,
 }) {
   function findLocation(event) {
+    console.log(event.target.clientWidth);
+    console.log(event.target.clientHeight);
     const xClient = event.target.getBoundingClientRect().left;
     const yClient = event.target.getBoundingClientRect().top;
+    console.log(event.target.clientWidth - xClient);
+    console.log(event.target.clientHeight - yClient);
     const xRelative = event.clientX - xClient;
     const yRelative = event.clientY - yClient;
     setCoordinates({
