@@ -1,60 +1,56 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 function PuzzleSelection({ startGame, setCurrentCharacters, choosePuzzle }) {
-  let inputSelected = false;
-
-  let selectedPuzzle = '';
-
-  function checkIfInputSelected(selectedInput) {
-    const allInputs = document.querySelectorAll('input');
-    allInputs.forEach((input) => {
-      input.checked = false;
-    });
-    selectedInput.checked = true;
-    selectedPuzzle = selectedInput.id;
-    inputSelected = true;
-  }
-
-  function start() {
-    if (inputSelected === true) {
-      choosePuzzle(selectedPuzzle);
-      setCurrentCharacters(selectedPuzzle);
-      startGame();
-    }
+  function start(choice) {
+    choosePuzzle(choice.dataset.name);
+    setCurrentCharacters(choice.dataset.name);
+    startGame();
   }
 
   return (
-    <main className="main">
-      <h2 className="puzzle-selection-heading">
-        Select an image
-        {' '}
-      </h2>
-      <fieldset className="puzzle-selection-fieldset">
-        <label className="label-1" htmlFor="XBOX 360">XBOX 360</label>
-        <input
-          className="input-1"
-          id="XBOX 360"
-          name="XBOX 360"
-          type="checkbox"
-          onClick={(e) => checkIfInputSelected(e.target)}
-        />
-        <label className="label-2" htmlFor="PS2">PS2</label>
-        <input
-          className="input-2"
-          id="PS2"
-          name="PS2"
-          type="checkbox"
-          onClick={(e) => checkIfInputSelected(e.target)}
-        />
-        <label className="label-3" htmlFor="AD 2222">AD 2222</label>
-        <input
-          className="input-3"
-          id="AD 2222"
-          name="AD 2222"
-          type="checkbox"
-          onClick={(e) => checkIfInputSelected(e.target)}
-        />
-        <button className="puzzle-selection-button" type="button" onClick={start}>Start</button>
-      </fieldset>
-
+    <main className="puzzle-selection">
+      <h1 className="puzzle-selection-heading">Select An Image</h1>
+      <section className="puzzle-selection-grid">
+        <div
+          className="puzzle-selection-container"
+          data-name="XBOX 360"
+          onClick={(e) => start(e.target)}
+        >
+          <label className="puzzle-selection-label" data-name="XBOX 360">XBOX 360</label>
+          <img
+            className="puzzle-selection-img"
+            data-name="XBOX 360"
+            src={`${process.env.PUBLIC_URL}/Images/XBOX 360.jpg`}
+            alt="XBOX 360"
+          />
+        </div>
+        <div
+          className="puzzle-selection-container"
+          data-name="PS2"
+          onClick={(e) => start(e.target)}
+        >
+          <label className="puzzle-selection-label" data-name="PS2">PS2</label>
+          <img
+            className="puzzle-selection-img"
+            data-name="PS2"
+            src={`${process.env.PUBLIC_URL}/Images/PS2.jpg`}
+            alt="PS2"
+          />
+        </div>
+        <div
+          className="puzzle-selection-container"
+          data-name="AD 2222"
+          onClick={(e) => start(e.target)}
+        >
+          <label className="puzzle-selection-label" data-name="AD 2222">AD 2222</label>
+          <img
+            className="puzzle-selection-img"
+            data-name="AD 2222"
+            src={`${process.env.PUBLIC_URL}/Images/AD 2222.jpg`}
+            alt="AD 2222"
+          />
+        </div>
+      </section>
     </main>
   );
 }
