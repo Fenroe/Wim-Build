@@ -94,9 +94,7 @@ function Game() {
     }
     if (xVerified === true && yVerified === true) {
       const updatedCharacters = characters.map((character) => {
-        if (character.name === data.name) {
-          character.found = true;
-        }
+        if (character.name === data.name) character.found = true;
         return character;
       });
       setCharacters(updatedCharacters);
@@ -104,9 +102,8 @@ function Game() {
   }
 
   function checkIfAllCharactersFound() {
-    if (characters.every((character) => character.found === true)) {
-      return true;
-    } return false;
+    if (characters.every((character) => character.found === true)) return true;
+    return false;
   }
 
   function restoreGameDefaults() {

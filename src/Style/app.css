@@ -4,6 +4,7 @@
   color: #E3E8F8;
   width: 100vw;
   min-height: 100vh;
+  align-items: center;
 }
 
 .button {

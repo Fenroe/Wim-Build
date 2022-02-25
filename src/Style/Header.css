@@ -5,3 +5,14 @@
   display: flex;
   justify-content: space-between;
 }
+
+.nav-menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav-menu-link {
+  text-decoration: none;
+  color: #E3E8F8;
+}
