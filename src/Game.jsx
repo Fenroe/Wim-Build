@@ -3,6 +3,7 @@
 /* eslint-disable no-else-return */
 import { useState } from 'react';
 import characterData from './Data/characterData';
+import puzzleData from './Data/puzzleData';
 import Header from './Components/Header';
 import PuzzleSelection from './Components/PuzzleSelection';
 import Puzzle from './Components/Puzzle';
@@ -18,7 +19,12 @@ function Game() {
     inTime: false,
   });
 
-  const [selectedPuzzle, setSelectedPuzzle] = useState('');
+  const [selectedPuzzle, setSelectedPuzzle] = useState({
+    name: '',
+    url: '',
+    x: null,
+    y: null,
+  });
 
   const [time, setTime] = useState({
     minutes: 10,
@@ -58,8 +64,9 @@ function Game() {
     });
   }
 
-  function updateSelectedPuzzle(choice) {
-    setSelectedPuzzle(choice);
+  function updateSelectedPuzzle(name) {
+    const choice = puzzleData.filter((puzzle) => (puzzle.name === name ? puzzle : null));
+    if (choice.length > 0) setSelectedPuzzle(choice[0]);
   }
 
   function resetSelectedPuzzle() {

@@ -42,8 +42,8 @@ function Puzzle({
       <img
         onClick={(e) => findLocation(e)}
         className="puzzle-space"
-        src={`${process.env.PUBLIC_URL}/Images/${selectedPuzzle}.jpg`}
-        alt={selectedPuzzle}
+        src={selectedPuzzle.url}
+        alt={selectedPuzzle.name}
       />
       <FindCharacterMenu
         characters={characters}
