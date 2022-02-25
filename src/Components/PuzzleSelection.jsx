@@ -24,7 +24,7 @@ function PuzzleSelection({ startGame, setCurrentCharacters, choosePuzzle }) {
   return (
     <main className="main">
       <h2 className="puzzle-selection-heading">
-        Choose a puzzle from our selection. You will have ten minutes to find three characters
+        Select an image
         {' '}
       </h2>
       <fieldset className="puzzle-selection-fieldset">
