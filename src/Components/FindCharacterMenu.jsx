@@ -2,12 +2,13 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 function FindCharacterMenu({
   characters, coordinates, resetCoordinates, checkIfCharacterFound,
-  checkIfAllCharactersFound, finishedInTime,
+  checkIfAllCharactersFound, finishedInTime, endGame,
 }) {
   function checkInput(character) {
     checkIfCharacterFound(character);
     resetCoordinates();
     if (checkIfAllCharactersFound()) {
+      endGame();
       finishedInTime();
     }
   }

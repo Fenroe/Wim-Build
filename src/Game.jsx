@@ -151,6 +151,7 @@ function Game() {
             checkIfCharacterFound={checkIfCharacterFound}
             checkIfAllCharactersFound={checkIfAllCharactersFound}
             setCharacters={setCharacters}
+            endGame={endGame}
           />
         );
       } else {
@@ -167,7 +168,7 @@ function Game() {
 
   return (
     <div className="page-container">
-      <Header endGame={endGame} resetSelectedPuzzle={resetSelectedPuzzle} />
+      {!gameIsActive ? <Header /> : null}
       {renderCorrectComponents()}
     </div>
   );

@@ -2,6 +2,7 @@ const characterData = [
   {
     name: 'Tali',
     media: 'Mass Effect',
+    icon: `${process.env.PUBLIC_URL}/Images/Characters/tali-XBOX360.png`,
     map: 'XBOX 360',
     xStart: 167,
     xEnd: 186,
@@ -12,6 +13,7 @@ const characterData = [
   {
     name: 'Frank West',
     media: 'Dead Rising',
+    icon: `${process.env.PUBLIC_URL}/Images/Characters/frank-XBOX360.png`,
     map: 'XBOX 360',
     xStart: 903,
     xEnd: 927,
@@ -22,6 +24,7 @@ const characterData = [
   {
     name: 'Isaac',
     media: 'Dead Space',
+    icon: `${process.env.PUBLIC_URL}/Images/Characters/isaac-XBOX360.png`,
     map: 'XBOX 360',
     xStart: 748,
     xEnd: 776,
@@ -32,6 +35,7 @@ const characterData = [
   {
     name: 'James Sunderland',
     media: 'Silent Hill 2',
+    icon: `${process.env.PUBLIC_URL}/Images/Characters/james-PS2.png`,
     map: 'PS2',
     xStart: 376,
     xEnd: 396,
@@ -42,6 +46,7 @@ const characterData = [
   {
     name: 'Jimmy Hopkins',
     media: 'Bully',
+    icon: `${process.env.PUBLIC_URL}/Images/Characters/jimmy-PS2.png`,
     map: 'PS2',
     xStart: 800,
     xEnd: 824,
@@ -52,6 +57,7 @@ const characterData = [
   {
     name: 'Amaterasu',
     media: 'Okami',
+    icon: `${process.env.PUBLIC_URL}/Images/Characters/amaterasu-PS2.png`,
     map: 'PS2',
     xStart: 416,
     xEnd: 476,
@@ -62,6 +68,7 @@ const characterData = [
   {
     name: 'Ash Ketchum',
     media: 'Pokemon',
+    icon: `${process.env.PUBLIC_URL}/Images/Characters/ash-AD2222.png`,
     map: 'AD 2222',
     xStart: 29,
     xEnd: 48,
@@ -72,6 +79,7 @@ const characterData = [
   {
     name: 'Patrick',
     media: 'Spongebob Squarepants',
+    icon: `${process.env.PUBLIC_URL}/Images/Characters/patrick-AD2222.png`,
     map: 'AD 2222',
     xStart: 836,
     xEnd: 858,
@@ -82,6 +90,7 @@ const characterData = [
   {
     name: 'Tom',
     media: 'Tom and Jerry',
+    icon: `${process.env.PUBLIC_URL}/Images/Characters/tom-AD2222.png`,
     map: 'AD 2222',
     xStart: 1092,
     xEnd: 1116,

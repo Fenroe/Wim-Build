@@ -1,23 +1,15 @@
 import Header from './Components/Header';
-import Scores from './Components/Scores';
+import puzzleData from './Data/puzzleData';
 
 function Leaderboards() {
   return (
     <div className="page-container">
       <Header />
-      <main>
-        <section>
-          <h1>XBOX 360</h1>
-          <Scores />
-        </section>
-        <section>
-          <h1>PS2</h1>
-          <Scores />
-        </section>
-        <section>
-          <h1>AD 2222</h1>
-          <Scores />
-        </section>
+      <main className="leaderboards">
+        <h1>Leaderboards</h1>
+        <ul className="leaderboards-menu">
+          {puzzleData.map((puzzle) => (<li><button type="button">{puzzle.name}</button></li>))}
+        </ul>
       </main>
     </div>
   );

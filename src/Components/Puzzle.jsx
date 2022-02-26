@@ -8,15 +8,11 @@ import FindCharacterMenu from './FindCharacterMenu';
 function Puzzle({
   time, setTime, finishedInTime, timeRanOut, selectedPuzzle, characters, coordinates,
   setCoordinates, resetCoordinates, checkIfCharacterFound, checkIfAllCharactersFound,
-  setCharacters,
+  setCharacters, endGame,
 }) {
   function findLocation(event) {
-    console.log(event.target.clientWidth);
-    console.log(event.target.clientHeight);
     const xClient = event.target.getBoundingClientRect().left;
     const yClient = event.target.getBoundingClientRect().top;
-    console.log(event.target.clientWidth - xClient);
-    console.log(event.target.clientHeight - yClient);
     const xRelative = event.clientX - xClient;
     const yRelative = event.clientY - yClient;
     setCoordinates({
@@ -37,7 +33,7 @@ function Puzzle({
 
   return (
     <div className="puzzle-space-container">
-      <Timer time={time} setTime={setTime} timeRanOut={timeRanOut} />
+      <Timer time={time} setTime={setTime} timeRanOut={timeRanOut} endGame={endGame} />
       <Characters characters={characters} />
       <img
         onClick={(e) => findLocation(e)}
@@ -52,6 +48,7 @@ function Puzzle({
         checkIfCharacterFound={checkIfCharacterFound}
         checkIfAllCharactersFound={checkIfAllCharactersFound}
         finishedInTime={finishedInTime}
+        endGame={endGame}
       />
     </div>
 

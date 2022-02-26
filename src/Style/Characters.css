@@ -1,7 +1,18 @@
+.puzzle-character-container {
+  position: fixed;
+  left: 0;
+  margin: 0 2rem;
+}
+
 .characters-container {
   display: flex;
   gap: 1rem;
   list-style: none;
+}
+
+.character-icon {
+  height: 2rem;
+  width: 1.5rem;
 }
 
 .character-details-container {

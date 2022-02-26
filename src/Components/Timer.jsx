@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 
-function Timer({ time, setTime, timeRanOut }) {
+function Timer({
+  time, setTime, timeRanOut, endGame,
+}) {
   function startCountdown() {
     const countdown = setInterval(() => {
       if (time.seconds === 0) {
@@ -11,6 +13,7 @@ function Timer({ time, setTime, timeRanOut }) {
           });
         } else {
           timeRanOut();
+          endGame();
         }
       } else {
         setTime({
