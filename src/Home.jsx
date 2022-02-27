@@ -4,8 +4,8 @@ function Home() {
   return (
     <div className="page-container">
       <Header />
-      <article className="home-content-container">
-        <h1 className="home-heading">What Is This?</h1>
+      <main className="home-content-container">
+        <h1>What Is This?</h1>
         <br />
         <section className="home-text-container">
           <p className="home-text">
@@ -36,7 +36,7 @@ function Home() {
           <a className="home-link" href="/leaderboards">See The Leaderboards</a>
         </section>
 
-      </article>
+      </main>
 
     </div>
   );
