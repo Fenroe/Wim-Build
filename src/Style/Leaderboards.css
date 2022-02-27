@@ -8,5 +8,38 @@
 .leaderboards-menu {
   display: flex;
   list-style: none;
-  gap: 1rem;
+  gap: .2rem;
+  padding: 1rem 0;
+}
+
+.lb-button {
+  outline: none;
+  padding: 0 .5rem;
+  border: 1px solid #E3E8F8;
+  background-color: #3E588F;
+  color: #E3E8F8;
+  text-transform: uppercase;
+}
+
+.lb-button:hover {
+  border: 1px solid #3E588F;
+  background-color: #E3E8F8;
+  color: #3E588F;
+  cursor: pointer;
+}
+
+.lb-button-inverse {
+  border: 1px solid #3E588F;
+  background-color: #E3E8F8;
+  color: #3E588F;
+  padding: 0 .5rem;
+}
+
+.scores-table {
+  border-collapse: separate;
+  border-spacing: 2rem .5rem;
+}
+
+.score-table-data {
+  margin: 5rem;
 }

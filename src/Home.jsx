@@ -18,7 +18,7 @@ function Home() {
             interesting way.
             <br />
             <br />
-            Click the button below to start the game. You&apos;ll be able to choose a picture
+            Click the link below to play a game. You&apos;ll be able to choose a picture
             from our selection, and will have ten minutes to find three characters hidden inside
             the image.
             <br />
@@ -29,6 +29,11 @@ function Home() {
             Have fun!
             {' '}
           </p>
+          <br />
+          <a className="home-link" href="/game">Play The Game</a>
+          <br />
+          <br />
+          <a className="home-link" href="/leaderboards">See The Leaderboards</a>
         </section>
 
       </article>

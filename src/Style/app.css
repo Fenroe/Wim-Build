@@ -23,3 +23,11 @@
   color: #3E588F;
   cursor: pointer;
 }
+
+.button-inverse {
+  border: 1px solid #3E588F;
+  background-color: #E3E8F8;
+  color: #3E588F;
+  padding: 0 .5rem;
+  border-radius: 5px;
+}

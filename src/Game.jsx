@@ -91,17 +91,28 @@ function Game() {
   }
 
   function checkIfCharacterFound(data) {
+    const xMultiplier = coordinates.x / selectedPuzzle.x;
+    const yMultiplier = coordinates.y / selectedPuzzle.y;
+    const adjustedData = {
+      name: data.name,
+      xStart: data.xStart * xMultiplier,
+      xEnd: data.xEnd * xMultiplier,
+      yStart: data.yStart * yMultiplier,
+      yEnd: data.yEnd * yMultiplier,
+    };
     let xVerified = false;
     let yVerified = false;
-    if (coordinates.xRelative >= data.xStart && coordinates.xRelative <= data.xEnd) {
+    if (coordinates.xRelative >= adjustedData.xStart
+      && coordinates.xRelative <= adjustedData.xEnd) {
       xVerified = true;
     }
-    if (coordinates.yRelative >= data.yStart && coordinates.yRelative <= data.yEnd) {
+    if (coordinates.yRelative >= adjustedData.yStart
+      && coordinates.yRelative <= adjustedData.yEnd) {
       yVerified = true;
     }
     if (xVerified === true && yVerified === true) {
       const updatedCharacters = characters.map((character) => {
-        if (character.name === data.name) character.found = true;
+        if (character.name === adjustedData.name) character.found = true;
         return character;
       });
       setCharacters(updatedCharacters);

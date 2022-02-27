@@ -2,22 +2,33 @@
   position: fixed;
   left: 0;
   margin: 0 2rem;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  background-color: hsla(221, 40%, 40%, 0.5);
 }
 
-.characters-container {
+.puzzle-character-tracker {
   display: flex;
-  gap: 1rem;
-  list-style: none;
+  flex-direction: column;
+  gap: .5rem;
 }
 
 .character-icon {
   height: 2rem;
-  width: 1.5rem;
+  width: 2rem;
 }
 
 .character-details-container {
   display: flex;
+}
+
+.character-text-container {
+  display: flex;
   flex-direction: column;
+  
 }
 
 .character-name {
