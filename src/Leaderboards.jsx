@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Header from './Components/Header';
 import puzzleData from './Data/puzzleData';
 import { getScores } from './firebase';
+import LeaderboardLanding from './Components/LeaderboardLanding';
 import ScoresTable from './Components/ScoresTable';
 
 let scoreboardData = [];
@@ -65,11 +66,14 @@ function Leaderboards() {
         <ul className="leaderboards-menu">
           {handleMenu(puzzleData)}
         </ul>
-        <ScoresTable
-          handleScores={handleScores}
-          scoreboardData={scoreboardData}
-          selectedMap={selectedMap}
-        />
+        {selectedMap ? (
+          <ScoresTable
+            handleScores={handleScores}
+            scoreboardData={scoreboardData}
+            selectedMap={selectedMap}
+          />
+        )
+          : <LeaderboardLanding />}
       </main>
     </div>
   );
