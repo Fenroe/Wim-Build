@@ -20,8 +20,9 @@ function convertTime(timeInSeconds) {
 }
 
 function renderScores(scoreArray) {
-  return scoreArray.map((score) => (
-    <tr>
+  const processedScoreArray = scoreArray.slice(0, 10);
+  return processedScoreArray.map((score) => (
+    <tr key={processedScoreArray.indexOf(score)}>
       <td className="score-table-data">{scoreArray.indexOf(score) + 1}</td>
       <td className="score-table-data">{score.name}</td>
       <td className="score-table-data">{convertTime(score.time)}</td>
