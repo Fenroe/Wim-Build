@@ -8,10 +8,10 @@ function RouteSwitch() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
-        <Route path="https://fenroe.github.io/Wim-Build/" element={<Home />} />
-        <Route path="https://fenroe.github.io/Wim-Build/game" element={<Game />} />
-        <Route path="https://fenroe.github.io/Wim-Build/leaderboards" element={<Leaderboards />} />
-        <Route path="https://fenroe.github.io/Wim-Build/about" element={<About />} />
+        <Route exact path="" element={<Home />} />
+        <Route exact path="/game" element={<Game />} />
+        <Route exact path="/leaderboards" element={<Leaderboards />} />
+        <Route exact path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   );
