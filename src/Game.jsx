@@ -142,7 +142,7 @@ function Game() {
   function renderCorrectComponents() {
     if (gameFinished.finished) {
       if (gameFinished.inTime) {
-        return <SubmitTime reset={restoreGameDefaults} time={time} />;
+        return <SubmitTime reset={restoreGameDefaults} time={time} map={selectedPuzzle.name} />;
       } else {
         return <GameOver reset={restoreGameDefaults} />;
       }

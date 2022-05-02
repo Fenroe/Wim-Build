@@ -1,6 +1,6 @@
 function LeaderboardLanding() {
   return (
-    <p1>Select a map to view scores</p1>
+    <p>Select a map to view scores</p>
   );
 }
 

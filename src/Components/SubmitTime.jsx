@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { addScore } from '../firebase';
 
-function SubmitTime({ reset, time }) {
+function SubmitTime({ reset, time, map }) {
   const [errorMessage, setErrorMessage] = useState('');
 
   function submitScore(name) {
@@ -10,8 +11,7 @@ function SubmitTime({ reset, time }) {
     }
     // 600 is a magic number as the timer when writing this code was 10 minutes.
     const completionTime = 600 - ((time.minutes * 60) + time.seconds);
-    // TODO remove console.log and replace with write function
-    console.log(completionTime);
+    addScore(map, name, completionTime);
     reset();
   }
 
