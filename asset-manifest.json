@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/wim-build/static/css/main.bbe567f5.css",
-    "main.js": "/wim-build/static/js/main.29947d52.js",
+    "main.js": "/wim-build/static/js/main.ab5bb6c9.js",
     "index.html": "/wim-build/index.html",
     "main.bbe567f5.css.map": "/wim-build/static/css/main.bbe567f5.css.map",
-    "main.29947d52.js.map": "/wim-build/static/js/main.29947d52.js.map"
+    "main.ab5bb6c9.js.map": "/wim-build/static/js/main.ab5bb6c9.js.map"
   },
   "entrypoints": [
     "static/css/main.bbe567f5.css",
-    "static/js/main.29947d52.js"
+    "static/js/main.ab5bb6c9.js"
   ]
 }
