@@ -1,7 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './Components/Header';
 import puzzleData from './Data/puzzleData';
-import scoreboardData from './Data/scoreboardData';
+import { getScores } from './firebase';
+import ScoresTable from './Components/ScoresTable';
+
+let scoreboardData = [];
+
+async function updateScores() {
+  const scores = await getScores();
+  scoreboardData = scores;
+}
 
 function convertTime(timeInSeconds) {
   const minutes = Math.floor(timeInSeconds / 60);
@@ -35,7 +43,11 @@ function handleScores(scoresArray, map) {
 }
 
 function Leaderboards() {
-  const [selectedMap, setSelectedMap] = useState(puzzleData[0].name);
+  const [selectedMap, setSelectedMap] = useState('');
+
+  useEffect(() => {
+    updateScores();
+  }, []);
 
   function handleMenu(array) {
     return array.map((item) => (
@@ -53,24 +65,11 @@ function Leaderboards() {
         <ul className="leaderboards-menu">
           {handleMenu(puzzleData)}
         </ul>
-        <table className="scores-table">
-          <thead>
-            <tr className="scores-table-headings-container">
-              <th>
-                <h2 className="scores-table-heading">Place</h2>
-              </th>
-              <th>
-                <h2 className="scores-table-heading">Name</h2>
-              </th>
-              <th>
-                <h2 className="scores-table-heading">Time</h2>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {handleScores(scoreboardData, selectedMap)}
-          </tbody>
-        </table>
+        <ScoresTable
+          handleScores={handleScores}
+          scoreboardData={scoreboardData}
+          selectedMap={selectedMap}
+        />
       </main>
     </div>
   );
